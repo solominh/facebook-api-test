@@ -61,6 +61,8 @@
         statusChangeCallback(response);
       });
 
+
+
     };
 
     // Load the SDK asynchronously
@@ -81,6 +83,11 @@
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
       });
+
+      FB.ui({
+        method: 'pagetab',
+        redirect_uri: 'https://solominh.com'
+      }, function (response) { });
     }
   </script>
 
@@ -104,7 +111,7 @@
   </br>
   <p>You should uncheck allow sharing user friends to test retry button</p>
   <button id="loginButtonMorePermissons">Login with more permissions</button>
-  
+
   <br/>
   <button id="loginButtonMorePermissonsRetry">Login with more permissions retry</button>
 
@@ -114,8 +121,8 @@
   <div class="fb-login-button" data-max-rows="1" data-size="medium" data-auto-logout-link="true"></div>
   <br/>
   <div class="fb-login-button" data-scope="user_friends, publish_actions" data-max-rows="1" data-size="medium"></div>
-  
-  
+
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // ...
